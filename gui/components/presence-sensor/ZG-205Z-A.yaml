@@ -1,0 +1,44 @@
+type: grid
+cards:
+  - type: heading
+    heading: Presence-Zigbee
+    heading_style: title
+    badges:
+      - type: entity
+        entity: binary_sensor.{replace-with-sensor-name}_presence
+      - type: entity
+        show_state: true
+        show_icon: true
+        entity: sensor.{replace-with-sensor-name}_illuminance
+        color: state
+    icon: mdi:waveform
+  - type: history-graph
+    entities:
+      - entity: binary_sensor.{replace-with-sensor-name}_presence
+        name: presenza
+      - entity: sensor.{replace-with-sensor-name}_motion_state
+        name: movimento
+    hours_to_show: 0.1
+    layout_options:
+      grid_columns: full
+      grid_rows: 2
+  - type: entities
+    entities:
+      - entity: sensor.{replace-with-sensor-name}_motion_state
+        secondary_info: last-changed
+        name: Movimento
+      - entity: binary_sensor.{replace-with-sensor-name}_presence
+        name: Presenza
+        secondary_info: last-changed
+  - type: history-graph
+    entities:
+      - entity: binary_sensor.{replace-with-sensor-name}_presence
+        name: Presenza
+    hours_to_show: 10
+  - graph: line
+    type: sensor
+    entity: sensor.{replace-with-sensor-name}_illuminance
+    detail: 1
+    layout_options:
+      grid_columns: full
+    name: Luminosità

@@ -1,0 +1,19 @@
+type: grid
+cards:
+  - type: heading
+    heading: Scrivania
+    heading_style: title
+    badges:
+      - type: entity
+        entity: sensor.{replace-with-name}_desk_height
+  - type: tile
+    entity: switch.{replace-with-name}_alzato
+  - type: tile
+    entity: cover.{replace-with-name}_desk
+    features:
+      - type: cover-open-close
+  - type: tile
+    entity: switch.{replace-with-name}_seduto
+  - type: history-graph
+    entities:
+      - sensor.{replace-with-name}_desk_height
