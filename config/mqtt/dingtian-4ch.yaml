@@ -1,0 +1,263 @@
+  switch:
+    - unique_id: Dingtian-relay0-all
+      name: "Dingtian-relay0 Switch0 All ON/OFF"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"ON/OFF","idx":"1","status":"ON","time":"0","pass":"0"}
+      {"type":"ON/OFF","idx":"2","status":"ON","time":"0","pass":"0"}
+      {"type":"ON/OFF","idx":"3","status":"ON","time":"0","pass":"0"}
+      {"type":"ON/OFF","idx":"4","status":"ON","time":"0","pass":"0"}'
+      payload_off: '{"type":"ON/OFF","idx":"1","status":"OFF","time":"0","pass":"0"}
+      {"type":"ON/OFF","idx":"2","status":"OFF","time":"0","pass":"0"}
+      {"type":"ON/OFF","idx":"3","status":"OFF","time":"0","pass":"0"}
+      {"type":"ON/OFF","idx":"4","status":"OFF","time":"0","pass":"0"}'
+      optimistic: false
+      qos: 0
+      retain: false
+
+# relay1~4
+    - unique_id: Dingtian-relay0-r1
+      name: "Dingtian-relay0 Switch1"
+      state_topic: "/dingtian/relay0/out/r1"
+      command_topic: "/dingtian/relay0/in/r1"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r2
+      name: "Dingtian-relay0 Switch2"
+      state_topic: "/dingtian/relay0/out/r2"
+      command_topic: "/dingtian/relay0/in/r2"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r3
+      name: "Dingtian-relay0 Switch3"
+      state_topic: "/dingtian/relay0/out/r3"
+      command_topic: "/dingtian/relay0/in/r3"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r4
+      name: "Dingtian-relay0 Switch4"
+      state_topic: "/dingtian/relay0/out/r4"
+      command_topic: "/dingtian/relay0/in/r4"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+
+# delay-relay1~4
+    - unique_id: Dingtian-relay0-r1-delay5s
+      name: "Dingtian-relay0 Switch1 Delay 5S"
+      state_topic: "/dingtian/relay0/out/r1"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"DELAY","idx":"1","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"DELAY","idx":"1","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r2-delay5s
+      name: "Dingtian-relay0 Switch2 Delay 5S"
+      state_topic: "/dingtian/relay0/out/r2"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"DELAY","idx":"2","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"DELAY","idx":"2","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r3-delay5s
+      name: "Dingtian-relay0 Switch3 Delay 5S"
+      state_topic: "/dingtian/relay0/out/r3"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"DELAY","idx":"3","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"DELAY","idx":"3","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r4-delay5s
+      name: "Dingtian-relay0 Switch4 Delay 5S"
+      state_topic: "/dingtian/relay0/out/r4"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"DELAY","idx":"4","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"DELAY","idx":"4","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+
+# jogging-relay1~4
+    - unique_id: Dingtian-relay0-r1-jogging-500ms
+      name: "Dingtian-relay0 Switch1 Delay 500ms"
+      state_topic: "/dingtian/relay0/out/r1"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"JOGGING","idx":"1","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"JOGGING","idx":"1","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r2-jogging-500ms
+      name: "Dingtian-relay0 Switch2 Delay 500ms"
+      state_topic: "/dingtian/relay0/out/r2"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"JOGGING","idx":"2","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"JOGGING","idx":"2","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r3-jogging-500ms
+      name: "Dingtian-relay0 Switch3 Delay 500ms"
+      state_topic: "/dingtian/relay0/out/r3"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"JOGGING","idx":"3","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"JOGGING","idx":"3","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+    - unique_id: Dingtian-relay0-r4-jogging-500ms
+      name: "Dingtian-relay0 Switch4 Delay 500ms"
+      state_topic: "/dingtian/relay0/out/r4"
+      command_topic: "/dingtian/relay0/in/control"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: '{"type":"JOGGING","idx":"4","status":"ON","time":"5","pass":"0"}'
+      payload_off: '{"type":"JOGGING","idx":"4","status":"OFF","time":"5","pass":"0"}'
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: false
+      qos: 0
+      retain: false
+
+
+# input1~4
+  binary_sensor:
+    - unique_id: Dingtian-relay0-i1
+      name: "Dingtian-relay0 Input1"
+      state_topic: "/dingtian/relay0/out/i1"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      qos: 0
+
+    - unique_id: Dingtian-relay0-i2
+      name: "Dingtian-relay0 Input2"
+      state_topic: "/dingtian/relay0/out/i2"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      qos: 0
+
+    - unique_id: Dingtian-relay0-i3
+      name: "Dingtian-relay0 Input3"
+      state_topic: "/dingtian/relay0/out/i3"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      qos: 0
+
+    - unique_id: Dingtian-relay0-i4
+      name: "Dingtian-relay0 Input4"
+      state_topic: "/dingtian/relay0/out/i4"
+      availability:
+        - topic: "/dingtian/relay0/out/lwt_availability"
+          payload_available: "online"
+          payload_not_available: "offline"
+      payload_on: "ON"
+      payload_off: "OFF"
+      qos: 0

@@ -1,0 +1,30 @@
+sensor:
+  - name: "TV State"
+    object_id: "hisense_tv_state"
+    state_topic: "/remoteapp/mobile/broadcast/ui_service/state"
+    value_template: >
+      {% if value_json.statetype == 'livetv' %}
+        Live TV
+      {% elif value_json.statetype == 'app' %}
+        {{ value_json.name | capitalize }}
+      {% else %}
+        Unknown
+      {% endif %}
+    json_attributes_topic: "/remoteapp/mobile/broadcast/ui_service/state"
+    json_attributes_template: >
+      {% if value_json.statetype == 'livetv' %}
+        {
+          "channel_num": "{{ value_json.channel_num }}",
+          "progname": "{{ value_json.progname }}",
+          "starttime": "{{ value_json.starttime }}",
+          "endtime": "{{ value_json.endtime }}",
+          "detail": "{{ value_json.detail }}",
+          "channel_name": "{{ value_json.channel_name }}"
+        }
+      {% elif value_json.statetype == 'app' %}
+        {
+          "app_name": "{{ value_json.name }}",
+          "app_url": "{{ value_json.url }}"
+        }
+      {% endif %}
+
